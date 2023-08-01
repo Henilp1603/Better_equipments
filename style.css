@@ -1,3 +1,37 @@
+#CustomCursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    transition: transform .4s; 
+    pointer-events: none;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 500ms ease;
+  }
+
+  body:hover > #CustomCursor {
+    opacity: 1;
+  }
+
+  html{
+    font-size: 100%;
+}
+
+
+body {
+    
+    height: 100%;
+    min-height: 100%;
+    cursor: default;
+    color: #000;
+    background-color: #fff;
+  }
 
 *{
     padding: 0;
@@ -22,7 +56,7 @@ ul{
 }
 
 section,footer{
-    padding: 0px 60px;
+    padding: 0px 3.7rem;
 }
 
 .section {
@@ -31,12 +65,29 @@ section,footer{
 
 /* NavBar css */
 
-.nav_conatiner{
+/* .nav_conatiner{
     padding: 10px 60px;
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 1rem;
+} */
+
+.nav_conatiner{
+    padding: 10px 60px;
+    width: 100vw;
+    height: 80px;
+}
+
+.website_nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile_nav{
+    display: none;
 }
 
 .logo_sec{
@@ -45,7 +96,8 @@ section,footer{
 
 .logo_name{
     font-size: 1.3rem;
-    font-weight: 800;
+    font-weight: 1000;
+    font-style: italic;
     text-transform: uppercase;
     color: #FF6B00;
     padding-left: 0.3rem;
@@ -77,11 +129,24 @@ section,footer{
     padding: 14px 25px;
     border-radius: 3rem; 
     color: white;
-    background-color: #FF6B00;
     font-size: 1rem;
-    border: none;
     cursor: pointer;
+    border:none;
+    border-radius: 1.9375rem;
+    background: linear-gradient(200deg, #FF6B00 0%, #FFB47E 100%);
+    box-shadow: 0px 1px 24px 1px rgba(253, 116, 0, 0.5); 
+    transition: all 0.5s ease;
 }
+/* Add transition on hover  */
+.btn:hover{
+    transform: translateY(-2px);
+    transition: all 0.5s ease;
+}
+
+/* .qute_btn:hover{
+    box-shadow: 10px 3px 64px -9px rgba(253,118,0,1);
+    transition: all 0.5s ease;
+} */
 
 /* toggle switch css */
 
@@ -108,7 +173,7 @@ section,footer{
 .switches-container label {
     width: 50%;
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 500;
     padding: 0;
     margin: 0;
     text-align: center;
@@ -122,7 +187,7 @@ section,footer{
     bottom: 0;
     width: 50%;
     padding: 0.15rem;
-    z-index: 3;
+    /* z-index: 1; */
     transition: transform .5s cubic-bezier(.77, 0, .175, 1);
     /* transition: transform 1s; */
 }
@@ -137,7 +202,7 @@ section,footer{
     width: 100%;
     text-align: center;
     font-size: 0.8rem;
-    font-weight: 700;
+    font-weight: 500;
     opacity: 0;
     display: block;
     color: black;
@@ -169,9 +234,10 @@ section,footer{
 
 /* Hero-section css */
 
-
 .hero_section{
-    margin: 80px 0;
+    /* margin: 60px 0; */
+    margin-top: 3rem;
+    margin-bottom: 1rem;
 }
 
 .hero_main_container{
@@ -179,14 +245,19 @@ section,footer{
 }
 
 .hero_main_text{
-    font-size: 4.4rem;
+    font-size: 4.625rem;
     font-weight: 300;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
-    letter-spacing: 0.3rem;
-    word-spacing: 0.8rem;
-    z-index: 999;
+    letter-spacing: 0.1rem;
+    word-spacing: 0rem;
+    font-style: italic;
+}
+
+.hero_text_content{
+    position: relative;
+    width: 100%;
 }
 
 .hero_sec_text{
@@ -195,6 +266,7 @@ section,footer{
     font-size: 5rem;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
+    font-style: normal;
 }
 
 .hero_text_logo{
@@ -202,51 +274,71 @@ section,footer{
 }
 
 .hero_bottom_text{
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: normal;
     color: #8E8E8E;
-    /* margin-bottom: 3rem; */
-    width:50rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width:45rem;
+    font-weight: 400;
 }
 
 .hero_last_text{
-    color: #8E8E8E;
+    color: #b4b4b4;
     font-size: 0.625rem;
     padding: 0.625rem;
     margin-left: 0.625rem;
 }
+
 .hero_img{
-    position:absolute;
-    height: 27rem;
-    width: 24rem;
-    bottom:-2rem;
-    right: 12rem;
-    z-index: -999;
+    background-image: url(img/hero1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    height: 25.6rem;
+    width: 23rem;
+    bottom:0.7rem;
+    right: 13rem;
+    z-index: -1;
     filter: invert();
+   
 }
 
 .explore_btn{
     margin-top: 1.9rem;
     font-weight: 600;
+    border-radius: 5rem;
+    background: #FD7400;
+    box-shadow: 0px 2px 15px 3px rgba(0, 0, 0, 0.17);
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
-
 
 /* Testimonial section css */
 
 
 
 .heading_div{
-    background-color: #FF6B00;
-    width: fit-content;
-    padding: 0.6rem 2.5rem;
+    width: 55.5rem;
+    height: fit-content;
+    border-radius: 5rem 5rem 5rem 0rem;
+    background: linear-gradient(0deg, #FFA253 0%, #FD7400 100%);
+    box-shadow: 0px 3px 14px 1px rgba(0, 0, 0, 0.16);
+    padding: 2rem 2.5rem;
     border-radius: 80px 80px 80px 0;
     text-align: center;
     margin-bottom: 5rem;
+    margin-top: 10rem;
 }
 
 .heading_text{
-    color: white;
+    color: #FFF;
+    font-family: Helvetica;
     font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 700;
+
+
 }
 .testimonial_div{
     margin-top: 1.25rem;
@@ -263,6 +355,8 @@ section,footer{
     width: 25rem;
     background-color: #F0F0F0;
     border-radius: 0.625rem;
+    box-shadow: 0px 4px 11px -1px rgba(0, 0, 0, 0.23);
+    transition: all 0.3s ease-in-out;
 }
 
 
@@ -274,9 +368,10 @@ section,footer{
     color: #FD7400;
 }
 
-
-
-
+.testimonial_card:hover{
+    transform: scale(1.02);
+    transition: all 0.3s ease-in-out;
+}
 
 .testimonial_chat_div{
     margin: 0 1.25rem;
@@ -329,12 +424,12 @@ section,footer{
   width: 0;
   height: 0;
   position: absolute;
-  border-left: 10px solid transparent; 
-  border-right: 15px solid #26252A;
-  border-top: 7px solid #26252A;
-  border-bottom: 10px solid transparent;
-  left: -19px;
-  bottom: 10px;
+  border-left: 0.625rem solid transparent; 
+  border-right: 0.94rem solid #26252A;
+  border-top: 0.44rem solid #26252A;
+  border-bottom: 0.625rem solid transparent;
+  left: -1.4rem;
+  bottom: 0.725rem;
 }
 
 .chat_l::before{
@@ -342,20 +437,21 @@ section,footer{
     width: 0;
     height: 0;
     position: absolute;
-    border-left: 20px solid #26252A; 
-    border-right: 15px solid transparent;
-    border-top: 8px solid #26252A;
-    border-bottom: 15px solid transparent;
-    right: -19px;
-    bottom: 5px;
+    border-left: 1.25rem solid #26252A; 
+    border-right: 0.94rem solid transparent;
+    border-top: 0.5rem solid #26252A;
+    border-bottom: 0.94rem solid transparent;
+    right: -1.4rem;
+    bottom: 0.32rem;
   }
 
   .testimonial_bottom_txt{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #BDBDBD;
     text-align: center;
     padding: 0 2.5rem;
     padding-top: 3.8rem;
+    font-weight: 600;
   }
 
 
@@ -369,7 +465,6 @@ section,footer{
     place-items: center;
     margin-top: 3.2rem;
 }
-
 
 .product_card{
     background-color: #F0F0F0;
@@ -430,73 +525,137 @@ section,footer{
 /* For Responsive Design */
 
 
+@media screen and (max-width:500px) {
+
+
+    html{
+        font-size: 35%;
+    }
+}
+/* For Phone-screen */
 @media screen and (max-width:904px) {
-    .hero_img{
-        position: relative;
-        top: 20px;
-        left: 8px;
-        width: 90%;
+   
+    html{
+        font-size: 40%;
     }
 
+    .website_nav{
+        display: none;
+    }
+    .nav_conatiner{
+        padding-bottom: 9.4rem;
+    }
+
+    .mobile_nav{
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 1rem;
+    }
+
+    .nav_icons{
+        
+        background-color: #FD7400;
+        padding: 2rem 3rem;
+        width: fit-content;
+        border-radius: 4rem;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .icon{
+        font-size: 2.5rem;
+        font-weight: 500;
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+
+    .mobile_logo_img{
+        height: 4rem;
+        padding: 0 2rem;
+    }
+   
     .hero_main_text{
-        font-size: 2.6rem;
+        letter-spacing: 0.1rem;
+        word-spacing: 0.1rem;
+        font-size: 4.3rem;
     }
+    
 
-    .hero_sec_text{
-        font-size: 3rem;
-    }
-
-    .hero_text_logo{
-        height: 3rem;
-    }
     .hero_bottom_text{
-        font-size: 0.9rem;
+        font-size: 1.7rem;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+        width: 100%;
+    }
+
+    .explore_btn_div{
+        text-align: center;
     }
 
     .explore_btn{
-        margin-top: 30px;
+        font-size: 2rem;
+        padding:1.3rem 2.2rem ;
+    }
+
+    .hero_last_text{
+        font-size: 1.2rem;
+        margin-top: 0.6rem;
+    }
+
+    .hero_img{
+        position: relative;
+        bottom: 0;
+        right: 0;
+        margin-top: 2rem;
+        width: 100%;
+        height: 45rem;
     }
 
     .testimonial_cards{
         grid-template-columns: 1fr;
-        row-gap: 30px;
+        row-gap: 3rem;
+    }
+    .testimonial_card{
+        height: 42rem;
+        width: 40rem;
+    }
+
+    .testimonial_card_title{
+        font-size: 1.6rem;
+    }
+
+    .chat_box{
+        font-size: 1.3rem;
+        width: 21rem;
+        margin: 1rem 1.5rem;
     }
 
     .product_list{
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(2,1fr);
+        gap: 2rem;
+    }
+
+    .product_img{
+        width: 22rem;
     }
 
     .heading_div{
-        width: fit-content;
-        padding: 0.4rem 2.3rem;
+        width: 45rem;
     }
-    
-    .heading_text{
-        font-size: 2rem;
-    }
-}
 
+   
+}
 
 @media only screen and (min-width: 904px) and (max-width: 1040px){
 
-   
-    /* .hero_section{
-        background-color: red;
-    } */
-    .hero_main_text{
-        font-size: 2.6rem;
+    html{
+        font-size: 60%;
     }
-    .hero_sec_text{
-        font-size: 3.5rem;
-    }
-    .hero_text_logo{
-        height: 3.5rem;
-    }
-    .hero_bottom_text{
-        font-size: 1rem;
-        width: 23rem;
-    }
-
+    
     .testimonial_cards{
         grid-template-columns: 1fr 1fr;
         row-gap: 30px;
@@ -505,32 +664,13 @@ section,footer{
     .product_list{
         grid-template-columns: repeat(3,1fr);
     }
-    .heading_div{
-        width: fit-content;
-        padding: 0.4rem 2.3rem;
-    }
-    
-    .heading_text{
-        font-size: 2rem;
-    }
+   
 }
 @media only screen and (min-width: 1040px) and (max-width: 1182px){
 
-    /* .hero_section{
-        background-color: red;
-    } */
-    
-    .hero_main_text{
-        font-size: 3.3rem;
-    }
-    .hero_sec_text{
-        font-size: 3.8rem;
-    }
-    .hero_text_logo{
-        height: 3.8rem;
-    }
-    .hero_bottom_text{
-        width: 32rem;
+
+    html{
+        font-size: 75%;
     }
 
     .testimonial_cards{
@@ -541,79 +681,22 @@ section,footer{
     .product_list{
         grid-template-columns: repeat(3,1fr);
     }
-    .heading_div{
-        width: fit-content;
-        padding: 0.4rem 2.3rem;
-    }
-    
-    .heading_text{
-        font-size: 2rem;
-    }
 }
+@media only screen and (min-width: 1182px) and (max-width: 1400px){
 
-@media only screen and (min-width: 1182px) and (max-width: 1300px){
+   
     
-    .hero_main_text{
-        font-size: 4rem;
-        letter-spacing: 0.1rem;
-        word-spacing: 0.5rem;
+    html{
+      font-size: 85%;
     }
-
-    .hero_sec_text{
-        font-size: 4.5rem;
-        
-    }
-
-    .hero_text_logo{
-        height: 4.5rem;
-    }
-
-    .hero_bottom_text{
-        font-size: 1rem;
-        width: 40rem;
-    }
-
-    .testimonial_cards{
-        grid-template-columns: 1fr 1fr;
-        row-gap: 30px;
-    }
-
-    .product_list{
-        grid-template-columns: repeat(3,1fr);
-    }
-    .heading_div{
-        width: fit-content;
-        padding: 0.5rem 2.4rem;
-    }
-    
-    .heading_text{
-        font-size: 2.2rem;
-    }
-}
-
-
-@media only screen and (min-width: 1200px) and (max-width: 1400px){
-
-    .hero_main_text{
-        font-size: 4rem;
-        letter-spacing: 0.1rem;
-        word-spacing: 0.5rem;
-    }
-
-    .hero_sec_text{
-        font-size: 4.5rem;
-        
-    }
-
-    .hero_text_logo{
-        height: 4.5rem;
-    }
-
-    .hero_bottom_text{
-        font-size: 1rem;
-        width: 40rem;
-    }
-    
-}
-
+  
+      .testimonial_cards{
+          grid-template-columns: 1fr 1fr;
+          row-gap: 30px;
+      }
+  
+      .product_list{
+          grid-template-columns: repeat(3,1fr);
+      }
+  }
 

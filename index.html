@@ -6,32 +6,42 @@
     <title></title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="cursor.js"></script>
+    <script src="animate.js"></script>
+
 </head>
 <body>
+  <div id="CustomCursor"></div>
  <!-- NavBar section -->
-    <nav class="nav_conatiner">
-        <div class="logo_sec">
-          <span><img src="img/Logo.png" alt="logo" class="logo_img" ></span>
-          <p class="logo_name">Better <br> Equipments.</p>
-        </div>
-        <div class="switches-container">
-            <input
-              type="radio"
-              id="switchWebsite"
-              name="switch"
-              value="website"
-              checked="checked"
-            />
-            <input type="radio" id="switchProduct" name="switch" value="product" />
-            <label for="switchWebsite">Website</label>
-            <label for="switchProduct">Products</label>
-            <div class="switch-wrapper">
-              <div class="switch">
-                <div>Website</div>
-                <div>Products</div>
-              </div>
+ <nav class="nav_conatiner">
+  <div class="website_nav">
+
+    <div class="logo_sec">
+      <span><img src="img/Logo.png" alt="logo" class="logo_img" ></span>
+      <p class="logo_name">Better <br> Equipments.</p>
+    </div>
+    <div class="switches-container">
+        <input
+          type="radio"
+          id="switchWebsite"
+          name="switch"
+          value="website"
+          checked="checked"
+          />
+          <input type="radio" id="switchProduct" name="switch" value="product" />
+          <label for="switchWebsite">Website</label>
+          <label for="switchProduct">Products</label>
+          <div class="switch-wrapper">
+            <div class="switch">
+              <div>Website</div>
+              <div>Products</div>
             </div>
           </div>
+        </div>
         <div class="nav_items">
           <ul class="nav_items_ul">
             <li class="nav_item active">
@@ -45,7 +55,17 @@
             </li>
           </ul>
         </div>
-    </nav>
+      </div>
+      <div class="mobile_nav">
+        <div class="nav_icons">
+          <i class="ri-home-line icon"></i>
+          <i class="ri-phone-line icon"></i>
+          <img src="/img/mobile-logo.png" alt="sfs" class="mobile_logo_img">
+          <i class="ri-shopping-cart-line icon"></i>
+          <i class="ri-menu-3-line icon"></i>
+        </div>
+      </div>
+      </nav>
  <!-- NavBar section End -->
 
  <!-- Hero Section Start -->
@@ -54,27 +74,26 @@
         <div class="hero_text_content">
             <h1 class="hero_main_text">
               We Just Call Ourselves<br>
-              <span class="hero_sec_text"><img src="img/Logo.png" alt="" class="hero_text_logo">Better.</span>
+              <span class="hero_sec_text"><img src="img/Logo.png" alt="" class="hero_text_logo" id="logoimg">etter.</span>
               We are actually the <br>
-              <span class="hero_sec_text"><img src="img/Logo.png" alt="" class="hero_text_logo">Best.</span>
+              <span class="hero_sec_text"><img src="img/Logo.png" alt="" class="hero_text_logo" id="logoimg">est.</span>
             </h1>
             <h4 class="hero_bottom_text">We are a B2B and B2C importer and distributors of textile embroidery  machine cards. We also works as import facilitators and outsourcers for many products and provide electronics and electrical related services.</h4>
 
-            <div class="hero_img_container">
-              <img src="img/hero1.png" alt="heroImg" class="hero_img" >
-          </div>
+            <button class="btn explore_btn" id="cta">Explore our range of products</button>  
+            <h4 class="hero_last_text">Trusted by more than 25+ Retailers across India</h4> 
+          <img src="img/hero1.png" alt="heroImg" class="hero_img" >
 
-            <button class="btn explore_btn">Explore our range of products</button>  
-            <h4 class="hero_last_text">Trusted by more than 25+ Retailers  across India</h4>          
-            
-        </div>
-      </div>
+          </div>
+          <!-- <div class="hero_img" id="herophoto"></div> -->
+
+          </div>
     </section>
  <!-- Hero Section End -->
 
   <!-- Testimonial Section Start -->
  <section class="testimonial_section section">
-    <div class="heading_div">
+    <div class="heading_div" id="testiomonial_heading_div">
       <h1 class="heading_text">Why our customers love us?</h1>
     </div>
     <div class="testimonial_div">
@@ -83,7 +102,7 @@
           <h2 class="testimonial_card_title">Timely Delivery</h2>
           <div class="testimonial_chat_div">
             <div class="testimonial_chat chat_left">
-              <h4 class="chat_title title_left">client</h4>
+              <h4 class="chat_title title_left">Client</h4>
               <div class=" chat_box chat_r">
                 We need some items urgently, when can you deliver?
               </div>
@@ -107,7 +126,7 @@
           <h2 class="testimonial_card_title">Stellar customer service</h2>
           <div class="testimonial_chat_div">
             <div class="testimonial_chat chat_left">
-              <h4 class="chat_title title_left">client</h4>
+              <h4 class="chat_title title_left">Client</h4>
               <div class=" chat_box chat_r">
                 Hey, I cannot figure out how to install the card you just sent, can you help me out?
               </div>
@@ -132,7 +151,7 @@
           <h2 class="testimonial_card_title">Highest Quality Products</h2>
           <div class="testimonial_chat_div">
             <div class="testimonial_chat chat_left">
-              <h4 class="chat_title title_left">client</h4>
+              <h4 class="chat_title title_left">Client</h4>
               <div class=" chat_box chat_r">
                 The cards we bought from you are amazing, the packaging feels premium. Our customers are loving it.
               </div>
@@ -152,7 +171,7 @@
   <!-- Testimonial Section Start -->
 
 <section class="product_list_section section">
-  <div class="heading_div">
+  <div class="heading_div" id="product_heading_div">
     <h1 class="heading_text">Our Services and Products</h1>
   </div>
 
@@ -287,9 +306,7 @@
         <button class="btn buy_btn">Buy Now</button>
       </div>
     </div>
-
   </div>
 </section>
-
 </body>
 </html>
