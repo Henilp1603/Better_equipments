@@ -1,38 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="cursor.js"></script>
     <script src="animate.js"></script>
-
-</head>
-<body>
-  <div id="CustomCursor"></div>
- <!-- NavBar section -->
- <nav class="nav_conatiner">
-  <div class="website_nav">
-
-    <div class="logo_sec">
-      <span><img src="img/Logo.png" alt="logo" class="logo_img" ></span>
-      <p class="logo_name">Better <br> Equipments.</p>
-    </div>
-    <div class="switches-container">
-        <input
-          type="radio"
-          id="switchWebsite"
-          name="switch"
-          value="website"
-          checked="checked"
+    <script src="toggle.js"></script>
+  </head>
+  <body>
+    <div id="CustomCursor"></div>
+    <!-- NavBar section -->
+    <nav class="nav_conatiner">
+      <div class="website_nav">
+        <div class="logo_sec">
+          <span><img src="img/Logo.png" alt="logo" class="logo_img" /></span>
+          <p class="logo_name">
+            Better <br />
+            Equipments.
+          </p>
+        </div>
+        <div class="switches-container">
+          <input
+            type="radio"
+            id="switchWebsite"
+            name="switch"
+            value="website"
+            checked="checked"
+            onclick="website_switch()"
           />
-          <input type="radio" id="switchProduct" name="switch" value="product" />
+          <input
+            type="radio"
+            id="switchProduct"
+            name="switch"
+            value="product"
+            onclick="product_switch()"
+          />
           <label for="switchWebsite">Website</label>
           <label for="switchProduct">Products</label>
           <div class="switch-wrapper">
@@ -44,269 +59,538 @@
         </div>
         <div class="nav_items">
           <ul class="nav_items_ul">
-            <li class="nav_item active">
-              Home
-            </li>
+            <li class="nav_item active">Home</li>
+            <li class="nav_item">Contact</li>
             <li class="nav_item">
-              Contact
-            </li>
-            <li class="nav_item">
-              <button class="qute_btn btn">Get a quote</button>
+              <button type="button" class="qute_btn btn" id="get_quote_btn">
+                Get a quote
+              </button>
+              <button type="button" class="qute_btn btn" id="cart_btn">
+                <i class="ri-shopping-cart-line cart_icon"></i> Cart
+              </button>
             </li>
           </ul>
         </div>
       </div>
       <div class="mobile_nav">
         <div class="nav_icons">
-          <i class="ri-home-line icon"></i>
-          <i class="ri-phone-line icon"></i>
-          <img src="/img/mobile-logo.png" alt="sfs" class="mobile_logo_img">
-          <i class="ri-shopping-cart-line icon"></i>
-          <i class="ri-menu-3-line icon"></i>
+          <a href="#"
+            ><i class="ri-home-line icon" onclick="website_switch()"></i
+          ></a>
+          <a href="#"> <i class="ri-phone-line icon"></i></a>
+          <img src="/img/mobile-logo.png" alt="sfs" class="mobile_logo_img" />
+          <a href="#"><i class="ri-shopping-cart-line icon"></i></a>
+          <a href="#"><i class="ri-menu-3-line icon"></i></a>
         </div>
       </div>
-      </nav>
- <!-- NavBar section End -->
+    </nav>
+    <!-- NavBar section End -->
 
- <!-- Hero Section Start -->
-    <section class="hero_section ">
-      <div class="hero_main_container">
-        <div class="hero_text_content">
-            <h1 class="hero_main_text">
-              We Just Call Ourselves<br>
-              <span class="hero_sec_text"><img src="img/Logo.png" alt="" class="hero_text_logo" id="logoimg">etter.</span>
-              We are actually the <br>
-              <span class="hero_sec_text"><img src="img/Logo.png" alt="" class="hero_text_logo" id="logoimg">est.</span>
-            </h1>
-            <h4 class="hero_bottom_text">We are a B2B and B2C importer and distributors of textile embroidery  machine cards. We also works as import facilitators and outsourcers for many products and provide electronics and electrical related services.</h4>
+    <main class="main" id="main">
+      <div class="website_page" id="website_page">
+        <!-- Hero Section Start -->
+        <section class="hero_section" id="hero-section">
+          <div class="hero_main_container">
+            <div class="hero_text_content">
+              <h1 class="hero_main_text">
+                We Just Call Ourselves<br />
+                <span class="hero_sec_text"
+                  ><img
+                    src="img/Logo.png"
+                    alt=""
+                    class="hero_text_logo"
+                    id="logoimg"
+                  />etter.</span
+                >
+                We are actually the <br />
+                <span class="hero_sec_text"
+                  ><img
+                    src="img/Logo.png"
+                    alt=""
+                    class="hero_text_logo"
+                    id="logoimg"
+                  />est.</span
+                >
+              </h1>
+              <h4 class="hero_bottom_text">
+                We are a B2B and B2C importer and distributors of textile
+                embroidery machine cards. We also works as import facilitators
+                and outsourcers for many products and provide electronics and
+                electrical related services.
+              </h4>
 
-            <button class="btn explore_btn" id="cta">Explore our range of products</button>  
-            <h4 class="hero_last_text">Trusted by more than 25+ Retailers across India</h4> 
-          <img src="img/hero1.png" alt="heroImg" class="hero_img" >
-
+              <button
+                type="button"
+                class="btn explore_btn"
+                id="cta"
+                onclick="product_switch()"
+              >
+                Explore our range of products
+              </button>
+              <h4 class="hero_last_text">
+                Trusted by more than 25+ Retailers across India
+              </h4>
+              <img src="img/hero1.png" alt="heroImg" class="hero_img" />
+            </div>
+            <!-- <div class="hero_img" id="herophoto"></div> -->
           </div>
-          <!-- <div class="hero_img" id="herophoto"></div> -->
+        </section>
+        <!-- Hero Section End -->
 
+        <!-- Testimonial Section Start -->
+        <section class="testimonial_section section" id="testimonial-section">
+          <div class="heading_div" id="testiomonial_heading_div">
+            <h1 class="heading_text">Why our customers love us?</h1>
           </div>
-    </section>
- <!-- Hero Section End -->
+          <div class="testimonial_div">
+            <div class="testimonial_cards">
+              <div class="testimonial_card">
+                <h2 class="testimonial_card_title">Timely Delivery</h2>
+                <div class="testimonial_chat_div">
+                  <div class="testimonial_chat chat_left">
+                    <h4 class="chat_title title_left">Client</h4>
+                    <div class="chat_box chat_r">
+                      We need some items urgently, when can you deliver?
+                    </div>
+                  </div>
+                  <div class="testimonial_chat chat_right">
+                    <h4 class="chat_title title_right">Better Equipments</h4>
+                    <div class="chat_box chat_l">
+                      Yes sir, your order is placed and dispatched today, you
+                      will receive the order earliest by tomorrow.
+                    </div>
+                  </div>
+                  <div class="testimonial_chat chat_left">
+                    <h4 class="chat_title title_left">Client</h4>
+                    <div class="chat_box chat_r">
+                      Wow! That was fast. Thanks for the quick service
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-  <!-- Testimonial Section Start -->
- <section class="testimonial_section section">
-    <div class="heading_div" id="testiomonial_heading_div">
-      <h1 class="heading_text">Why our customers love us?</h1>
-    </div>
-    <div class="testimonial_div">
-      <div class="testimonial_cards">
-        <div class="testimonial_card">
-          <h2 class="testimonial_card_title">Timely Delivery</h2>
-          <div class="testimonial_chat_div">
-            <div class="testimonial_chat chat_left">
-              <h4 class="chat_title title_left">Client</h4>
-              <div class=" chat_box chat_r">
-                We need some items urgently, when can you deliver?
+              <div class="testimonial_card">
+                <h2 class="testimonial_card_title">Stellar customer service</h2>
+                <div class="testimonial_chat_div">
+                  <div class="testimonial_chat chat_left">
+                    <h4 class="chat_title title_left">Client</h4>
+                    <div class="chat_box chat_r">
+                      Hey, I cannot figure out how to install the card you just
+                      sent, can you help me out?
+                    </div>
+                  </div>
+                  <div class="testimonial_chat chat_right">
+                    <h4 class="chat_title title_right">Better Equipments</h4>
+                    <div class="chat_box chat_l">
+                      Sure! We will send a technician over today and he will
+                      assist you.
+                    </div>
+                  </div>
+                  <div class="testimonial_chat chat_left">
+                    <h4 class="chat_title title_left">Client</h4>
+                    <div class="chat_box chat_r">
+                      Awesome! Really loved your service. Thanks for the support
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testimonial_card">
+                <h2 class="testimonial_card_title">Highest Quality Products</h2>
+                <div class="testimonial_chat_div">
+                  <div class="testimonial_chat chat_left">
+                    <h4 class="chat_title title_left">Client</h4>
+                    <div class="chat_box chat_r">
+                      The cards we bought from you are amazing, the packaging
+                      feels premium. Our customers are loving it.
+                    </div>
+                  </div>
+                  <div class="testimonial_chat chat_right">
+                    <h4 class="chat_title title_right">Better Equipments</h4>
+                    <div class="chat_box chat_l">
+                      Glad you liked them, as our motto goes, We just call
+                      ourselves better, we are actually the best.
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="testimonial_chat chat_right">
-              <h4 class="chat_title title_right">Better Equipments</h4>
-              <div class=" chat_box chat_l">
-                Yes sir, your order is placed and dispatched today, you will receive the order earliest by tomorrow.
+            <div>
+              <h3 class="testimonial_bottom_txt">
+                These are just 3, we can give you a dozen more reasons why our
+                customers love us. But if you are really interested in finding
+                out, give us a call and find it yourself!
+              </h3>
+            </div>
+          </div>
+        </section>
+        <!-- Testimonial Section Start -->
+
+        <section class="product_list_section section" id="product-section">
+          <div class="heading_div" id="product_heading_div">
+            <h1 class="heading_text">Our Services and Products</h1>
+          </div>
+
+          <div class="product_list">
+            <div class="product_card">
+              <div class="product_img_div">
+                <img src="/img/pro-1.png" alt="pro-1" class="product_img" />
+              </div>
+              <div class="product_name_price">
+                <h2 class="product_name">EF140 COLOUR CARD</h2>
+                <h3 class="product_price">Price : Rs 180/card</h3>
+              </div>
+              <div class="product_disc_div">
+                <p class="product_disc">
+                  A quality colour card for your embroidery machine which is
+                  topmost quality and ultimate reliability
+                </p>
+              </div>
+              <div class="product_buy_btn_div">
+                <button type="button" class="btn buy_btn">Buy Now</button>
               </div>
             </div>
-            <div class="testimonial_chat chat_left">
-              <h4 class="chat_title title_left">Client</h4>
-              <div class=" chat_box chat_r">
-                Wow! That was fast. Thanks for the quick service
+
+            <div class="product_card">
+              <div class="product_img_div">
+                <img src="/img/pro-2.png" alt="pro-1" class="product_img" />
+              </div>
+              <div class="product_name_price">
+                <h2 class="product_name">EF150 PENDRIVE CARD</h2>
+                <h3 class="product_price">Price : Rs 160/card</h3>
+              </div>
+              <div class="product_disc_div">
+                <p class="product_disc">
+                  A quality print card for your embroidery machine which is
+                  topmost quality and ultimate reliability
+                </p>
+              </div>
+              <div class="product_buy_btn_div">
+                <button type="button" class="btn buy_btn">Buy Now</button>
+              </div>
+            </div>
+
+            <div class="product_card">
+              <div class="product_img_div">
+                <img src="/img/pro-3.png" alt="pro-1" class="product_img" />
+              </div>
+              <div class="product_name_price">
+                <h2 class="product_name">EF140 COLOUR CARD</h2>
+                <h3 class="product_price">Price : Rs 180/card</h3>
+              </div>
+              <div class="product_disc_div">
+                <p class="product_disc">
+                  A quality colour card for your embroidery machine which is
+                  topmost quality and ultimate reliability
+                </p>
+              </div>
+              <div class="product_buy_btn_div">
+                <button type="button" class="btn buy_btn">Buy Now</button>
+              </div>
+            </div>
+
+            <div class="product_card">
+              <div class="product_img_div">
+                <img src="/img/pro-4.png" alt="pro-1" class="product_img" />
+              </div>
+              <div class="product_name_price">
+                <h2 class="product_name">EF140 COLOUR CARD</h2>
+                <h3 class="product_price">Price : Rs 180/card</h3>
+              </div>
+              <div class="product_disc_div">
+                <p class="product_disc">
+                  A quality colour card for your embroidery machine which is
+                  topmost quality and ultimate reliability
+                </p>
+              </div>
+              <div class="product_buy_btn_div">
+                <button type="button" class="btn buy_btn">Buy Now</button>
+              </div>
+            </div>
+
+            <div class="product_card">
+              <div class="product_img_div">
+                <img src="/img/pro-5.png" alt="pro-1" class="product_img" />
+              </div>
+              <div class="product_name_price">
+                <h2 class="product_name">EF140 COLOUR CARD</h2>
+                <h3 class="product_price">Price : Rs 180/card</h3>
+              </div>
+              <div class="product_disc_div">
+                <p class="product_disc">
+                  A quality colour card for your embroidery machine which is
+                  topmost quality and ultimate reliability
+                </p>
+              </div>
+              <div class="product_buy_btn_div">
+                <button type="button" class="btn buy_btn">Buy Now</button>
+              </div>
+            </div>
+
+            <div class="product_card">
+              <div class="product_img_div">
+                <img src="/img/pro-6.png" alt="pro-1" class="product_img" />
+              </div>
+              <div class="product_name_price">
+                <h2 class="product_name">EF140 COLOUR CARD</h2>
+                <h3 class="product_price">Price : Rs 180/card</h3>
+              </div>
+              <div class="product_disc_div">
+                <p class="product_disc">
+                  A quality colour card for your embroidery machine which is
+                  topmost quality and ultimate reliability
+                </p>
+              </div>
+              <div class="product_buy_btn_div">
+                <button type="button" class="btn buy_btn">Buy Now</button>
+              </div>
+            </div>
+
+            <div class="product_card">
+              <div class="product_img_div">
+                <img src="/img/pro-7.png" alt="pro-1" class="product_img" />
+              </div>
+              <div class="product_name_price">
+                <h2 class="product_name">EF140 COLOUR CARD</h2>
+                <h3 class="product_price">Price : Rs 180/card</h3>
+              </div>
+              <div class="product_disc_div">
+                <p class="product_disc">
+                  A quality colour card for your embroidery machine which is
+                  topmost quality and ultimate reliability
+                </p>
+              </div>
+              <div class="product_buy_btn_div">
+                <button type="button" class="btn buy_btn">Buy Now</button>
+              </div>
+            </div>
+
+            <div class="product_card">
+              <div class="product_img_div">
+                <img src="/img/pro-8.png" alt="pro-1" class="product_img" />
+              </div>
+              <div class="product_name_price">
+                <h2 class="product_name">EF140 COLOUR CARD</h2>
+                <h3 class="product_price">Price : Rs 180/card</h3>
+              </div>
+              <div class="product_disc_div">
+                <p class="product_disc">
+                  A quality colour card for your embroidery machine which is
+                  topmost quality and ultimate reliability
+                </p>
+              </div>
+              <div class="product_buy_btn_div">
+                <button type="button" class="btn buy_btn">Buy Now</button>
               </div>
             </div>
           </div>
-        </div>
+        </section>
+      </div>
 
-        <div class="testimonial_card">
-          <h2 class="testimonial_card_title">Stellar customer service</h2>
-          <div class="testimonial_chat_div">
-            <div class="testimonial_chat chat_left">
-              <h4 class="chat_title title_left">Client</h4>
-              <div class=" chat_box chat_r">
-                Hey, I cannot figure out how to install the card you just sent, can you help me out?
+      <div class="product_page" id="product_page">
+        <section class="product_page_section section">
+          <div class="product_page_heading_div">
+            <h1 class="product_page_heading">Our Products</h1>
+          </div>
+
+          <div class="product_list">
+            <div class="product_card">
+              <div class="product_img_div">
+                <img src="/img/pro-1.png" alt="pro-1" class="product_img" />
+              </div>
+              <div class="product_name_price">
+                <h2 class="product_name">EF140 COLOUR CARD</h2>
+                <h3 class="product_price">Price : Rs 180/card</h3>
+              </div>
+              <div class="product_disc_div">
+                <p class="product_disc">
+                  A quality colour card for your embroidery machine which is
+                  topmost quality and ultimate reliability
+                </p>
+              </div>
+              <div class="product_buy_btn_div">
+                <button type="button" class="btn add_to_cart_btn">
+                  Add to Cart
+                </button>
+                <button type="button" class="btn buy_btn">Buy Now</button>
               </div>
             </div>
-            <div class="testimonial_chat chat_right">
-              <h4 class="chat_title title_right">Better Equipments</h4>
-              <div class=" chat_box chat_l">
-                Sure! We will send a technician over today and he will assist you.
+
+            <div class="product_card">
+              <div class="product_img_div">
+                <img src="/img/pro-2.png" alt="pro-1" class="product_img" />
+              </div>
+              <div class="product_name_price">
+                <h2 class="product_name">EF150 PENDRIVE CARD</h2>
+                <h3 class="product_price">Price : Rs 160/card</h3>
+              </div>
+              <div class="product_disc_div">
+                <p class="product_disc">
+                  A quality print card for your embroidery machine which is
+                  topmost quality and ultimate reliability
+                </p>
+              </div>
+              <div class="product_buy_btn_div">
+                <button type="button" class="btn add_to_cart_btn">
+                  Add to Cart
+                </button>
+                <button type="button" class="btn buy_btn">Buy Now</button>
               </div>
             </div>
-            <div class="testimonial_chat chat_left">
-              <h4 class="chat_title title_left">Client</h4>
-              <div class=" chat_box chat_r">
-                Awesome! Really loved your service. Thanks for the support
+
+            <div class="product_card">
+              <div class="product_img_div">
+                <img src="/img/pro-3.png" alt="pro-1" class="product_img" />
+              </div>
+              <div class="product_name_price">
+                <h2 class="product_name">EF140 COLOUR CARD</h2>
+                <h3 class="product_price">Price : Rs 180/card</h3>
+              </div>
+              <div class="product_disc_div">
+                <p class="product_disc">
+                  A quality colour card for your embroidery machine which is
+                  topmost quality and ultimate reliability
+                </p>
+              </div>
+              <div class="product_buy_btn_div">
+                <button type="button" class="btn add_to_cart_btn">
+                  Add to Cart
+                </button>
+                <button type="button" class="btn buy_btn">Buy Now</button>
+              </div>
+            </div>
+
+            <div class="product_card">
+              <div class="product_img_div">
+                <img src="/img/pro-4.png" alt="pro-1" class="product_img" />
+              </div>
+              <div class="product_name_price">
+                <h2 class="product_name">EF140 COLOUR CARD</h2>
+                <h3 class="product_price">Price : Rs 180/card</h3>
+              </div>
+              <div class="product_disc_div">
+                <p class="product_disc">
+                  A quality colour card for your embroidery machine which is
+                  topmost quality and ultimate reliability
+                </p>
+              </div>
+              <div class="product_buy_btn_div">
+                <button type="button" class="btn add_to_cart_btn">
+                  Add to Cart
+                </button>
+                <button type="button" class="btn buy_btn">Buy Now</button>
+              </div>
+            </div>
+
+            <div class="product_card">
+              <div class="product_img_div">
+                <img src="/img/pro-5.png" alt="pro-1" class="product_img" />
+              </div>
+              <div class="product_name_price">
+                <h2 class="product_name">EF140 COLOUR CARD</h2>
+                <h3 class="product_price">Price : Rs 180/card</h3>
+              </div>
+              <div class="product_disc_div">
+                <p class="product_disc">
+                  A quality colour card for your embroidery machine which is
+                  topmost quality and ultimate reliability
+                </p>
+              </div>
+              <div class="product_buy_btn_div">
+                <button type="button" class="btn add_to_cart_btn">
+                  Add to Cart
+                </button>
+                <button type="button" class="btn buy_btn">Buy Now</button>
+              </div>
+            </div>
+
+            <div class="product_card">
+              <div class="product_img_div">
+                <img src="/img/pro-6.png" alt="pro-1" class="product_img" />
+              </div>
+              <div class="product_name_price">
+                <h2 class="product_name">EF140 COLOUR CARD</h2>
+                <h3 class="product_price">Price : Rs 180/card</h3>
+              </div>
+              <div class="product_disc_div">
+                <p class="product_disc">
+                  A quality colour card for your embroidery machine which is
+                  topmost quality and ultimate reliability
+                </p>
+              </div>
+              <div class="product_buy_btn_div">
+                <button type="button" class="btn add_to_cart_btn">
+                  Add to Cart
+                </button>
+                <button type="button" class="btn buy_btn">Buy Now</button>
+              </div>
+            </div>
+
+            <div class="product_card">
+              <div class="product_img_div">
+                <img src="/img/pro-7.png" alt="pro-1" class="product_img" />
+              </div>
+              <div class="product_name_price">
+                <h2 class="product_name">EF140 COLOUR CARD</h2>
+                <h3 class="product_price">Price : Rs 180/card</h3>
+              </div>
+              <div class="product_disc_div">
+                <p class="product_disc">
+                  A quality colour card for your embroidery machine which is
+                  topmost quality and ultimate reliability
+                </p>
+              </div>
+              <div class="product_buy_btn_div">
+                <button type="button" class="btn add_to_cart_btn">
+                  Add to Cart
+                </button>
+                <button type="button" class="btn buy_btn">Buy Now</button>
+              </div>
+            </div>
+
+            <div class="product_card">
+              <div class="product_img_div">
+                <img src="/img/pro-8.png" alt="pro-1" class="product_img" />
+              </div>
+              <div class="product_name_price">
+                <h2 class="product_name">EF140 COLOUR CARD</h2>
+                <h3 class="product_price">Price : Rs 180/card</h3>
+              </div>
+              <div class="product_disc_div">
+                <p class="product_disc">
+                  A quality colour card for your embroidery machine which is
+                  topmost quality and ultimate reliability
+                </p>
+              </div>
+              <div class="product_buy_btn_div">
+                <button type="button" class="btn add_to_cart_btn">
+                  Add to Cart
+                </button>
+                <button type="button" class="btn buy_btn">Buy Now</button>
               </div>
             </div>
           </div>
-        </div>
 
-
-        <div class="testimonial_card">
-          <h2 class="testimonial_card_title">Highest Quality Products</h2>
-          <div class="testimonial_chat_div">
-            <div class="testimonial_chat chat_left">
-              <h4 class="chat_title title_left">Client</h4>
-              <div class=" chat_box chat_r">
-                The cards we bought from you are amazing, the packaging feels premium. Our customers are loving it.
-              </div>
-            </div>
-            <div class="testimonial_chat chat_right">
-              <h4 class="chat_title title_right">Better Equipments</h4>
-              <div class=" chat_box chat_l">
-                Glad you liked them, as our motto goes, We just call ourselves better, we are actually the best.
-              </div>
-            </div>
+          <div class="product_page_bottom_txt_div">
+            <h3 class="product_page_bottom_txt">
+              We are adding more products to our inventory soon
+            </h3>
           </div>
-        </div>
+          <div class="product_page_btn_div">
+            <button type="button" class="product_page_btn">
+              Proceed to cart
+            </button>
+          </div>
+        </section>
       </div>
-      <div><h3 class="testimonial_bottom_txt">These are just 3, we can give you a dozen more reasons why our customers love us. But if you are really interested in finding out, give us a call and find it yourself!</h3></div>
-    </div>
- </section>
-  <!-- Testimonial Section Start -->
+    </main>
 
-<section class="product_list_section section">
-  <div class="heading_div" id="product_heading_div">
-    <h1 class="heading_text">Our Services and Products</h1>
-  </div>
-
-  <div class="product_list">
-    <div class="product_card">
-      <div class="product_img_div">
-        <img src="/img/pro-1.png" alt="pro-1" class="product_img">
+    <footer class="footer">
+      <div class="footer_items">
+        <img src="/img/mobile-logo.png" alt="sfs" class="footer_logo_img" />
+        <h3 class="footer_text">Made with <i class="ri-heart-fill"></i></h3>
+        <span class="circle"><i class="ri-arrow-up-line"></i></span>
       </div>
-      <div class="product_name_price">
-        <h2 class="product_name">EF140 COLOUR CARD</h2>
-        <h3 class="product_price">Price : Rs 180/card</h3>
-      </div>
-      <div class="product_disc_div">
-        <p class="product_disc">A quality colour card for your embroidery machine which is topmost quality and ultimate reliability</p>
-      </div>
-      <div class="product_buy_btn_div">
-        <button class="btn buy_btn">Buy Now</button>
-      </div>
-    </div>
-
-    <div class="product_card">
-      <div class="product_img_div">
-        <img src="/img/pro-2.png" alt="pro-1" class="product_img">
-      </div>
-      <div class="product_name_price">
-        <h2 class="product_name">EF150 PENDRIVE CARD</h2>
-        <h3 class="product_price">Price : Rs 160/card</h3>
-      </div>
-      <div class="product_disc_div">
-        <p class="product_disc">A quality print card for your embroidery machine which is topmost quality and ultimate reliability</p>
-      </div>
-      <div class="product_buy_btn_div">
-        <button class="btn buy_btn">Buy Now</button>
-      </div>
-    </div>
-
-    <div class="product_card">
-      <div class="product_img_div">
-        <img src="/img/pro-3.png" alt="pro-1" class="product_img">
-      </div>
-      <div class="product_name_price">
-        <h2 class="product_name">EF140 COLOUR CARD</h2>
-        <h3 class="product_price">Price : Rs 180/card</h3>
-      </div>
-      <div class="product_disc_div">
-        <p class="product_disc">A quality colour card for your embroidery machine which is topmost quality and ultimate reliability</p>
-      </div>
-      <div class="product_buy_btn_div">
-        <button class="btn buy_btn">Buy Now</button>
-      </div>
-    </div>
-
-    <div class="product_card">
-      <div class="product_img_div">
-        <img src="/img/pro-4.png" alt="pro-1" class="product_img">
-      </div>
-      <div class="product_name_price">
-        <h2 class="product_name">EF140 COLOUR CARD</h2>
-        <h3 class="product_price">Price : Rs 180/card</h3>
-      </div>
-      <div class="product_disc_div">
-        <p class="product_disc">A quality colour card for your embroidery machine which is topmost quality and ultimate reliability</p>
-      </div>
-      <div class="product_buy_btn_div">
-        <button class="btn buy_btn">Buy Now</button>
-      </div>
-    </div>
-
-
-    <div class="product_card">
-      <div class="product_img_div">
-        <img src="/img/pro-5.png" alt="pro-1" class="product_img">
-      </div>
-      <div class="product_name_price">
-        <h2 class="product_name">EF140 COLOUR CARD</h2>
-        <h3 class="product_price">Price : Rs 180/card</h3>
-      </div>
-      <div class="product_disc_div">
-        <p class="product_disc">A quality colour card for your embroidery machine which is topmost quality and ultimate reliability</p>
-      </div>
-      <div class="product_buy_btn_div">
-        <button class="btn buy_btn">Buy Now</button>
-      </div>
-    </div>
-
-
-    <div class="product_card">
-      <div class="product_img_div">
-        <img src="/img/pro-6.png" alt="pro-1" class="product_img">
-      </div>
-      <div class="product_name_price">
-        <h2 class="product_name">EF140 COLOUR CARD</h2>
-        <h3 class="product_price">Price : Rs 180/card</h3>
-      </div>
-      <div class="product_disc_div">
-        <p class="product_disc">A quality colour card for your embroidery machine which is topmost quality and ultimate reliability</p>
-      </div>
-      <div class="product_buy_btn_div">
-        <button class="btn buy_btn">Buy Now</button>
-      </div>
-    </div>
-
-
-    <div class="product_card">
-      <div class="product_img_div">
-        <img src="/img/pro-7.png" alt="pro-1" class="product_img">
-      </div>
-      <div class="product_name_price">
-        <h2 class="product_name">EF140 COLOUR CARD</h2>
-        <h3 class="product_price">Price : Rs 180/card</h3>
-      </div>
-      <div class="product_disc_div">
-        <p class="product_disc">A quality colour card for your embroidery machine which is topmost quality and ultimate reliability</p>
-      </div>
-      <div class="product_buy_btn_div">
-        <button class="btn buy_btn">Buy Now</button>
-      </div>
-    </div>
-
-    <div class="product_card">
-      <div class="product_img_div">
-        <img src="/img/pro-8.png" alt="pro-1" class="product_img">
-      </div>
-      <div class="product_name_price">
-        <h2 class="product_name">EF140 COLOUR CARD</h2>
-        <h3 class="product_price">Price : Rs 180/card</h3>
-      </div>
-      <div class="product_disc_div">
-        <p class="product_disc">A quality colour card for your embroidery machine which is topmost quality and ultimate reliability</p>
-      </div>
-      <div class="product_buy_btn_div">
-        <button class="btn buy_btn">Buy Now</button>
-      </div>
-    </div>
-  </div>
-</section>
-</body>
+    </footer>
+  </body>
 </html>
