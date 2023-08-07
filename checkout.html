@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout Page</title>
+    <link rel="stylesheet" href="checkout.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="checkout_section">
+      <div class="container">
+        <div class="cart">
+          <div class="top">
+            <h2>Product Total</h2>
+            <h2 id="items">3</h2>
+          </div>
+          <table cellpadding="0" class="table">
+            <tr class="table-head">
+              <th>Images</th>
+              <th>Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Delete</th>
+            </tr>
+            <tr>
+              <td class="imgTD">
+                <div class="img-box">
+                  <img src="img/pro-1.png" class="img" />
+                </div>
+              </td>
+              <td class="nameTD"><h2>EF140 COLOUR CARD</h2></td>
+
+              <td class="qntTD">
+                <div class="Quantity">
+                  <i class="ri-add-circle-fill icons"></i>
+                  <h2>3</h2>
+                  <i class="ri-indeterminate-circle-fill icons"></i>
+                </div>
+              </td>
+
+              <td class="priceTD"><h2>$120</h2></td>
+              <td class="deleteTD">
+                <i class="ri-delete-bin-6-line icons"></i>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="imgTD">
+                <div class="img-box">
+                  <img src="img/pro-1.png" class="img" />
+                </div>
+              </td>
+              <td class="nameTD"><h2>EF140 COLOUR CARD</h2></td>
+
+              <td class="qntTD">
+                <div class="Quantity">
+                  <i class="ri-add-circle-fill icons"></i>
+                  <h2>3</h2>
+                  <i class="ri-indeterminate-circle-fill icons"></i>
+                </div>
+              </td>
+
+              <td class="priceTD"><h2>$120</h2></td>
+              <td class="deleteTD">
+                <i class="ri-delete-bin-6-line icons"></i>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="summary">
+          <div>
+            <div class="top">
+              <h2>Order Summary</h2>
+            </div>
+            <div class="details">
+              <h2 id="itemB">Item</h2>
+              <h2 id="totalA">3</h2>
+            </div>
+          </div>
+          <div>
+            <div class="shopping_inp_detail">
+              <h2>Shopping Type</h2>
+              <select name="shopping_inp" class="shopping_inp">
+                <option value="Simple Delivery">Simple Delivery</option>
+                <option value="fast-delivery">Fast Delivery</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <div class="hline"></div>
+            <div class="top">
+              <h2>Total</h2>
+              <h2>$360</h2>
+            </div>
+            <div class="checkoutdiv">
+              <button class="checkout">Check Out</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

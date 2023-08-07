@@ -619,6 +619,10 @@ footer {
   border-radius: 50%;
 }
 
+.scrollUp{
+  transition: 0.4s;
+}
+
 /* For Responsive Design */
 
 @media screen and (max-width: 400px) {
